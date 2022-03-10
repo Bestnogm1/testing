@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <a href="/cars/new">new</a>
+  <h1><%= title %> </h1>
+  <% cars.forEach((car)=>{ %>
+  <div> type of car: <%=car.name  %> </div>
+  <div>color: <%=car.color %> </div>
+    <a href="/cars/<%= car._id %>/show">  detail</a>
+  <form action="/cars/<%=car._id%>?_method=DELETE" method="POST">
+    <button type="submit"> delete</button>
+  </form>
+  <%}) %> 
+
+</body>
+</html>
